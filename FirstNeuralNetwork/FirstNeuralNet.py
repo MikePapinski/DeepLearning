@@ -9,9 +9,10 @@ import pandas as pd
 
 # In[2]:
 
-
-df = pd.read_csv('FRESHTEST.csv')
-
+#DIR='D:\Users\Mike\Desktop\New folder (4)\Machine-Learning-Projects\FirstNeuralNetwork'
+#df = pd.read_csv('FRESHTEST.csv')
+DIR='Machine-Learning-Projects/FirstNeuralNetwork'
+df = pd.read_csv(DIR+'/FRESHTEST.csv', delimiter=',')
 
 # In[3]:
 
