@@ -36,13 +36,13 @@ def GetTheInput_Single():
 
 
     #remove not important fields
-    del MyRawData['Gmt time']
-    del MyRawData['Open']
-    del MyRawData['High']
-    del MyRawData['Low']
-    del MyRawData['Close']
-    del MyRawData['Volume']
-    del MyRawData['time']
+   #  del MyRawData['Gmt time']
+   #  del MyRawData['Open']
+   #  del MyRawData['High']
+   #  del MyRawData['Low']
+   #  del MyRawData['Close']
+   #  del MyRawData['Volume']
+   #  del MyRawData['time']
 
 
     #remove last row without output value
