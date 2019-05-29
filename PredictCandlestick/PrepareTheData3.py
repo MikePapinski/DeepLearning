@@ -13,7 +13,7 @@ def GetTheInput_Single():
     # Control delimiters, rows, column names with read_csv (see later) 
     MyRawData = pd.read_csv(r"D:\Users\Mike\Desktop\daaaa\DeepLearning\PredictCandlestick\filename.csv") 
     # Preview the first 5 lines of the loaded data 
-    MyRawData = MyRawData.tail(100000)
+    MyRawData = MyRawData.tail(10000)
     #calculate time series
     MyRawData['time'] = pd.to_datetime(MyRawData['Gmt time'])
     MyRawData['Day of Week'] = MyRawData['time'].apply(lambda time: time.dayofweek)
@@ -38,7 +38,7 @@ def GetTheInput_Single():
 
    
     #add 4 more history candle sticks
-    for CandleCount in range(4):
+    for CandleCount in range(100):
         ActualCandleCount = CandleCount + 1
         MyRawData['BodyPips' + '_' + str(ActualCandleCount)] = MyRawData['BodyPips'].shift(-ActualCandleCount)
         MyRawData['WickUpPips' + '_' + str(ActualCandleCount)] = MyRawData['WickUpPips'].shift(-ActualCandleCount)
@@ -49,7 +49,7 @@ def GetTheInput_Single():
         MyRawData['GreenOrRed?' + '_' + str(ActualCandleCount)] = MyRawData['GreenOrRed?'].shift(-ActualCandleCount)
 
    #populate las column with the output
-    MyRawData['output'] = MyRawData['GreenOrRed?'].shift(-5)
+    MyRawData['output'] = MyRawData['GreenOrRed?'].shift(-101)
 
     #remove not important fields
     del MyRawData['Gmt time']
@@ -64,7 +64,7 @@ def GetTheInput_Single():
     del MyRawData['Minute'] 
 
     #remove last row without output value
-    MyFinalData = MyRawData[0:-100]
+    MyFinalData = MyRawData[0:-150]
     print(MyFinalData)
 
     return MyFinalData

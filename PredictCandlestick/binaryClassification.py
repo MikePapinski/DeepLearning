@@ -16,8 +16,8 @@ def MyFunction(x):
 df = GetTheInput_Single()
 dataset = df.values
 
-X = dataset[:, 0:35]
-Y = dataset[:, 35]
+X = dataset[:, 0:707]
+Y = dataset[:, 707]
 
 print('input:')
 print(X)
@@ -38,8 +38,8 @@ print(X_train.shape, X_val.shape, X_test.shape, Y_train.shape, Y_val.shape, Y_te
 
 
 model = Sequential()
-model.add(Dense(32, input_dim=35, kernel_initializer='normal', activation='relu'))
-model.add(Dense(32, kernel_initializer='normal', activation='relu'))
+model.add(Dense(32, input_dim=707, kernel_initializer='normal', activation='relu'))
+model.add(Dense(18, kernel_initializer='normal', activation='relu'))
 model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
 	# Compile model
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
@@ -59,7 +59,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 
 hist = model.fit(X_train, Y_train,
-          batch_size=32, epochs=10,
+          batch_size=50, epochs=100,
           validation_data=(X_val, Y_val))
 
 
