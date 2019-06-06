@@ -8,9 +8,10 @@ from CustomIndicators import moving_average, relative_strength, moving_average_c
 def GetTheInput_Single():
     # import the candle stick data
 
-    MyRawData = pd.read_csv(r"D:\Users\Mike\Desktop\daaaa\DeepLearning\PredictCandlestick\filename.csv") 
-
-    MyRawData = MyRawData.tail(850000)
+    MyRawData = pd.read_csv(r"D:\Users\Mike\Desktop\New folder (5)\New folder (7)\DeepLearning\PredictCandlestick\BinaryClassification_DenseLayer\filename.csv") 
+    #MyRawData = pd.read_csv(r"D:\Users\Mike\Desktop\New folder (5)\New folder (7)\DeepLearning\PredictCandlestick\BinaryClassification_DenseLayer\EURUSD_5M.csv") 
+    
+    #MyRawData = MyRawData.tail(850000)
     #calculate time series
     MyRawData['time'] = pd.to_datetime(MyRawData['Gmt time'])
     MyRawData['Day of Week'] = MyRawData['time'].apply(lambda time: time.dayofweek)
