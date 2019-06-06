@@ -8,8 +8,8 @@ from CustomIndicators import moving_average, relative_strength, moving_average_c
 def GetTheInput_Single():
     # import the candle stick data
 
-    MyRawData = pd.read_csv(r"D:\Users\Mike\Desktop\New folder (5)\New folder (7)\DeepLearning\PredictCandlestick\BinaryClassification_DenseLayer\filename.csv") 
-    #MyRawData = pd.read_csv(r"D:\Users\Mike\Desktop\New folder (5)\New folder (7)\DeepLearning\PredictCandlestick\BinaryClassification_DenseLayer\EURUSD_5M.csv") 
+    #MyRawData = pd.read_csv(r"D:\Users\Mike\Desktop\New folder (5)\New folder (7)\DeepLearning\PredictCandlestick\BinaryClassification_DenseLayer\filename.csv") 
+    MyRawData = pd.read_csv(r"D:\Users\Mike\Desktop\New folder (5)\New folder (7)\DeepLearning\PredictCandlestick\BinaryClassification_DenseLayer\EURUSD_5M.csv") 
     
     #MyRawData = MyRawData.tail(850000)
     #calculate time series
@@ -120,3 +120,4 @@ def GetTheInput_OHLC():
     MyFinalData = MyRawData[150:-150]
 
     return MyFinalData
+
