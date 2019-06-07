@@ -45,7 +45,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 
 #********** Train the Model ********************
-hist = model.fit(X_train, Y_train,batch_size=10, epochs=5,validation_data=(X_val, Y_val))
+hist = model.fit(X_train, Y_train,batch_size=8, epochs=10,validation_data=(X_val, Y_val))
 #***********************************************
 
 
@@ -77,7 +77,7 @@ Weekdays = round(len(predictions)/7200,0)
 
 # 2.Loop through predictions
 for prediction_check in predictions:
-    if prediction_check > 0.70 or prediction_check < 0.30:
+    if prediction_check > 0.80 or prediction_check < 0.20:
         # Predictions above threshold
 
         TotalTrades = TotalTrades+1
