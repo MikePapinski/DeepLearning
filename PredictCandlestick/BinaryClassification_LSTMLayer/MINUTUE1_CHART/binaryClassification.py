@@ -9,11 +9,13 @@ import itertools
 
 
 #***** Get the Values from Pandas *****
-df = GetTheInput_Single()
+df = GetTheInput_Single(1)
 dataset = df.values
 X = dataset[:, 0:132]
 Y = dataset[:, 132]
 #**************************************
+
+
 
 
 #********** Normalize the Input Values ************
