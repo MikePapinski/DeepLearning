@@ -5,10 +5,10 @@ from CustomIndicators import moving_average, relative_strength, moving_average_c
 
 #import matplotlib.pyplot as plt
 
-def GetTheInput_Single():
+def GetTheInput_Single(filename):
     # import the candle stick data
 
-    MyRawData = pd.read_csv(r"D:\Users\Mike\Desktop\New folder (5)\New folder (7)\DeepLearning\PredictCandlestick\BinaryClassification_DenseLayer\MINUTUE1_CHART\filename.csv") 
+    MyRawData = pd.read_csv(filename) 
 
     
     #MyRawData = MyRawData.tail(850000)
