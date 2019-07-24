@@ -1,29 +1,13 @@
 import matplotlib
 import numpy as np
 import pandas as pd
-import itertools
-import sklearn
-import keras
-import time
-import shap
 import datetime
+import itertools
 
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, CuDNNLSTM, Conv1D
-from matplotlib import pyplot as plt
-from sklearn import preprocessing
-
-from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 from mpl_finance import candlestick_ohlc
 import seaborn as sns
-
-print('Numpy version: ' + np.__version__)
-print('Pandas version: ' + pd.__version__)
-print('Matplotlib version: ' + matplotlib.__version__)
-print('Sklearn version: ' + sklearn.__version__)
-print('Keras version: ' + keras.__version__)
 
 
 def get_win_loss_stat(alpha_distance,raw_predictions, target_predictions):
@@ -241,3 +225,4 @@ def get_model_insights(my_model,training_history,alpha_distance,X_input,Y_output
     
     return(True)
     
+print('get_model_insights(my_model,training_history,alpha_distance,X_input,Y_output,Y_datetimes):')
